@@ -12,10 +12,10 @@ from unittest.mock import AsyncMock, patch
 
 from fastapi.testclient import TestClient
 
-from backend.main import app, ai_client
-from backend.config import settings
-from backend.models import BudgetBreakdown, BudgetItem, EventConfig, EventState, TaskItem, TaskList, WhatIfResponse
-from backend.state_manager import get_state, save_state
+from main import app, ai_client
+from config import settings
+from models import BudgetBreakdown, BudgetItem, EventConfig, EventState, TaskItem, TaskList, WhatIfResponse
+from state_manager import get_state, save_state
 
 
 class ScenarioApiTests(unittest.TestCase):
@@ -59,7 +59,8 @@ class ScenarioApiTests(unittest.TestCase):
         with patch.object(ai_client, "generate_structured", new=AsyncMock(return_value=self.ai_response)) as ai:
             response = self.client.post(f"{self.url}/what-if", json={"delta": delta or {"budget_change": -200, "guest_count_delta": 20, "new_date": "2027-07-20"}})
             self.assertEqual(response.status_code, 200, response.text)
-            self.assertIn('"target_config"', ai.call_args.kwargs["user"])
+            self.assertIn('"delta"', ai.call_args.kwargs["user"])
+            self.assertNotIn('"target_config"', ai.call_args.kwargs["user"])
             return response.json()
 
     def test_preview_is_isolated_and_preserves_verified_costs_and_completed_tasks(self):

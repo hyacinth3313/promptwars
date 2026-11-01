@@ -784,8 +784,7 @@ async def simulate_what_if_scenario(session_id: str, request: WhatIfRequest):
         )
 
     try:
-        prompt_delta = {**request.delta, "target_config": {"total_budget": proposed_config.total_budget, "guest_count": proposed_config.guest_count, "event_date": proposed_config.event_date.isoformat()}}
-        prompt_text = whatif_prompt(state=state, delta=prompt_delta)
+        prompt_text = whatif_prompt(state=state, delta=request.delta)
         response: WhatIfResponse = await ai_client.generate_structured(
             system=WHATIF_SYSTEM_PROMPT,
             user=prompt_text,
