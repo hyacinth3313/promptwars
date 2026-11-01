@@ -5,7 +5,7 @@ import ts from 'typescript';
 
 const source = await readFile(new URL('../src/lib/budget.ts', import.meta.url), 'utf8');
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText;
-const { effectiveCost, categoryProgress, recalculatePreviewBudget, optionKey } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
+const { effectiveCost, categoryProgress, recalculatePreviewBudget, optionKey, costIncreasePreview } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
 const item = { category: 'catering', allocated: 100, estimated: 120, verified: null, notes: '' };
 const budget = { total_budget: 100, items: [item], remaining: 0, overage: 20, is_over_budget: true };
 
@@ -33,4 +33,33 @@ test('applied-option matching distinguishes changed actions and savings', () => 
   assert.equal(optionKey(option), optionKey(structuredClone(option)));
   assert.notEqual(optionKey(option), optionKey({ ...option, total_savings_inr: 200 }));
   assert.notEqual(optionKey(option), optionKey({ ...option, tradeoffs: [{ ...option.tradeoffs[0], action: 'Reduce guest count' }] }));
+});
+
+test('cost simulation increases only the largest unverified estimate and preserves the original plan', () => {
+  const current = { total_budget: 300000, items: [
+    { ...item, category: 'venue', estimated: 150000, verified: 140000 },
+    { ...item, category: 'catering', estimated: 120000 },
+    { ...item, category: 'decor', estimated: 20000 },
+  ], remaining: 20000, overage: 0, is_over_budget: false };
+  const original = structuredClone(current);
+  const result = costIncreasePreview(current);
+  assert.equal(result.category, 'catering');
+  assert.equal(result.increase, 40000);
+  assert.equal(result.budget.items[1].estimated, 160000);
+  assert.equal(result.budget.overage, 20000);
+  assert.equal(result.budget.is_over_budget, true);
+  assert.deepEqual(result.budget.items[0], current.items[0]);
+  assert.deepEqual(result.budget.items[2], current.items[2]);
+  assert.deepEqual(current, original);
+  assert.equal(costIncreasePreview(result.budget), null);
+  assert.equal(costIncreasePreview({ ...current, items: [] }), null);
+  assert.equal(costIncreasePreview({ ...current, items: [{ ...item, verified: 0 }] }), null);
+  const spacious = costIncreasePreview({ ...current, total_budget: 400000, remaining: 120000 });
+  assert.equal(spacious.increase, 140000);
+  assert.equal(spacious.budget.is_over_budget, true);
+  assert.equal(spacious.budget.remaining, 0);
+  assert.equal(spacious.budget.overage, 20000);
+  const staleSummary = costIncreasePreview({ ...current, remaining: 0, total_budget: 300000.25 });
+  assert.equal(staleSummary.increase, 40000.25);
+  assert.equal(staleSummary.budget.overage, 20000);
 });

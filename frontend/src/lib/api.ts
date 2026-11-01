@@ -8,6 +8,7 @@ export const plannerApi = {
   initialize: async (config: EventConfig) => (await api.post<EventState>(`${path(config.session_id)}/intake`, config)).data,
   updateTask: async (id: string, taskId: string, status: TaskStatus) => (await api.post<TaskStatusUpdateResponse>(`${path(id)}/tasks/${encodeURIComponent(taskId)}/status`, { status })).data,
   recalculateBudget: async (id: string) => (await api.post<RecalculateBudgetResponse>(`${path(id)}/recalculate-budget`)).data,
+  updateBudgetItems: async (id: string, items: EventState['budget']['items']) => (await api.patch<EventState>(path(id), { budget: { items }, tradeoff_options: [] })).data,
   generateTradeoffs: async (id: string) => (await api.post<TradeoffResponse>(`${path(id)}/tradeoffs`, undefined, { params: { force_refresh: true } })).data,
   applyTradeoff: async (id: string, request: ApplyTradeoffRequest) => (await api.post<EventState>(`${path(id)}/apply-tradeoff`, request)).data,
   shiftTimeline: async (id: string, request: TimelineShiftRequest) => (await api.post<TimelineShiftResponse>(`${path(id)}/shift-timeline`, request)).data,

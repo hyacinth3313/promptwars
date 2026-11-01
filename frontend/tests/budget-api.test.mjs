@@ -37,3 +37,16 @@ test('apply sends the reviewed option explicitly; a subsequent GET retrieves the
   assert.equal(requests.at(-1).method, 'get');
   assert.equal(requests.at(-1).url, '/sessions/event-1');
 });
+
+test('simulation saves estimate items before recalculation and clears obsolete options without patching other plan data', async () => {
+  const items = [{ category: 'Sound_system', allocated: 10000, estimated: 40000, verified: null, notes: 'Keep note' }];
+  const before = requests.length;
+  responseData = { budget: { items } };
+  await plannerApi.updateBudgetItems('session/a', items);
+  await plannerApi.recalculateBudget('session/a');
+  assert.equal(requests[before].method, 'patch');
+  assert.equal(requests[before].url, '/sessions/session%2Fa');
+  assert.deepEqual(JSON.parse(requests[before].data), { budget: { items }, tradeoff_options: [] });
+  assert.equal(requests[before + 1].method, 'post');
+  assert.equal(requests[before + 1].url, '/sessions/session%2Fa/recalculate-budget');
+});
