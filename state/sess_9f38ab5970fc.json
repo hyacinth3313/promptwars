@@ -1,0 +1,279 @@
+{
+  "config": {
+    "session_id": "sess_9f38ab5970fc",
+    "event_type": "birthday",
+    "event_date": "2026-12-20",
+    "location": "Bengaluru",
+    "total_budget": 100000.0,
+    "guest_count": 100,
+    "priorities": {
+      "catering": 0.35,
+      "venue": 0.34,
+      "decor": 0.16,
+      "photography": 0.1,
+      "logistics": 0.05
+    },
+    "currency": "INR"
+  },
+  "last_committed_scenario_id": null,
+  "budget": {
+    "total_budget": 100000.0,
+    "items": [
+      {
+        "category": "catering",
+        "allocated": 35000.0,
+        "estimated": 32000.0,
+        "verified": null,
+        "notes": "Buffet approx ₹320 per plate for 100 guests"
+      },
+      {
+        "category": "venue",
+        "allocated": 34000.0,
+        "estimated": 15000.0,
+        "verified": null,
+        "notes": "AC banquet hall, 5 hrs plus service charges"
+      },
+      {
+        "category": "decor",
+        "allocated": 16000.0,
+        "estimated": 12000.0,
+        "verified": null,
+        "notes": "Traditional floral and lighting decor"
+      },
+      {
+        "category": "photography",
+        "allocated": 10000.0,
+        "estimated": 12000.0,
+        "verified": null,
+        "notes": "Full‑day coverage with album"
+      },
+      {
+        "category": "logistics",
+        "allocated": 5000.0,
+        "estimated": 8000.0,
+        "verified": null,
+        "notes": "Transport, parking permits, generator"
+      }
+    ],
+    "remaining": 21000.0,
+    "overage": 0.0,
+    "is_over_budget": false
+  },
+  "tasks": {
+    "tasks": [
+      {
+        "id": "task-venue-inspect",
+        "title": "Inspect and shortlist venue options",
+        "description": "Visit potential banquet halls, assess capacity, AV support, and catering policies",
+        "milestone": "3_months",
+        "due_date": "2026-09-15",
+        "depends_on": [],
+        "status": "completed",
+        "estimated_cost": 3000.0
+      },
+      {
+        "id": "task-venue-contract",
+        "title": "Finalize and sign venue contract",
+        "description": "Select venue, negotiate terms, pay deposit, and obtain contract copy",
+        "milestone": "3_months",
+        "due_date": "2026-09-25",
+        "depends_on": [
+          "task-venue-inspect"
+        ],
+        "status": "completed",
+        "estimated_cost": 5000.0
+      },
+      {
+        "id": "task-caterer-taste",
+        "title": "Primary caterer tasting session",
+        "description": "Sample menu items, finalize dishes, and discuss service staff",
+        "milestone": "3_months",
+        "due_date": "2026-09-20",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "completed",
+        "estimated_cost": 4000.0
+      },
+      {
+        "id": "task-decor-concept",
+        "title": "Develop theme decor concept",
+        "description": "Create mood board, select floral arrangements and lighting scheme",
+        "milestone": "3_months",
+        "due_date": "2026-09-30",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "completed",
+        "estimated_cost": 2000.0
+      },
+      {
+        "id": "task-photographer-shortlist",
+        "title": "Shortlist photographers",
+        "description": "Review portfolios, compare packages, and shortlist top 3",
+        "milestone": "3_months",
+        "due_date": "2026-09-28",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-invitations-dispatch",
+        "title": "Send digital and physical invitations",
+        "description": "Design e‑cards, print paper invites, and mail to guests",
+        "milestone": "1_month",
+        "due_date": "2026-11-01",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "completed",
+        "estimated_cost": 5000.0
+      },
+      {
+        "id": "task-wardrobe-trial",
+        "title": "Conduct wardrobe trials for honoree",
+        "description": "Fit and finalize birthday outfit and accessories",
+        "milestone": "1_month",
+        "due_date": "2026-11-10",
+        "depends_on": [],
+        "status": "completed",
+        "estimated_cost": 2000.0
+      },
+      {
+        "id": "task-dj-sound-setup",
+        "title": "Book DJ and arrange sound equipment",
+        "description": "Confirm playlist, negotiate rates, and ensure AV compatibility",
+        "milestone": "1_month",
+        "due_date": "2026-11-15",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "pending",
+        "estimated_cost": 6000.0
+      },
+      {
+        "id": "task-logistics-plan",
+        "title": "Finalize transfers and logistics plan",
+        "description": "Arrange guest pickups, parking, and on‑site transport",
+        "milestone": "1_month",
+        "due_date": "2026-11-12",
+        "depends_on": [
+          "task-venue-contract"
+        ],
+        "status": "completed",
+        "estimated_cost": 1500.0
+      },
+      {
+        "id": "task-makeup-artist",
+        "title": "Book makeup artist",
+        "description": "Select artist, schedule trial, and confirm day‑of service",
+        "milestone": "1_month",
+        "due_date": "2026-11-18",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 2500.0
+      },
+      {
+        "id": "task-caterer-confirm",
+        "title": "Lock in caterer and confirm menu",
+        "description": "Sign final catering agreement and confirm headcount",
+        "milestone": "1_week",
+        "due_date": "2026-12-13",
+        "depends_on": [
+          "task-caterer-taste",
+          "task-venue-contract"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-seating-chart",
+        "title": "Create seating chart arrangement",
+        "description": "Allocate tables based on guest list and venue layout",
+        "milestone": "1_week",
+        "due_date": "2026-12-14",
+        "depends_on": [
+          "task-venue-contract",
+          "task-logistics-plan"
+        ],
+        "status": "pending",
+        "estimated_cost": 1000.0
+      },
+      {
+        "id": "task-vendor-briefing",
+        "title": "Conduct vendor sync briefing",
+        "description": "Align all vendors on timeline, responsibilities, and contact points",
+        "milestone": "1_week",
+        "due_date": "2026-12-15",
+        "depends_on": [
+          "task-venue-contract",
+          "task-caterer-confirm",
+          "task-decor-concept",
+          "task-photographer-shortlist",
+          "task-dj-sound-setup"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-av-rehearsal",
+        "title": "AV and generator rehearsal",
+        "description": "Test sound system, lighting, and backup power on venue",
+        "milestone": "1_week",
+        "due_date": "2026-12-16",
+        "depends_on": [
+          "task-vendor-briefing",
+          "task-dj-sound-setup"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-setup-floral",
+        "title": "Morning setup and floral inspection",
+        "description": "Oversee decor installation and verify floral arrangements",
+        "milestone": "day_of",
+        "due_date": "2026-12-20",
+        "depends_on": [
+          "task-decor-concept",
+          "task-venue-contract"
+        ],
+        "status": "pending",
+        "estimated_cost": 3000.0
+      },
+      {
+        "id": "task-guest-welcome",
+        "title": "Coordinate guest welcome and seating",
+        "description": "Manage greeters, seating assistance, and welcome drinks",
+        "milestone": "day_of",
+        "due_date": "2026-12-20",
+        "depends_on": [
+          "task-seating-chart"
+        ],
+        "status": "pending",
+        "estimated_cost": 2000.0
+      },
+      {
+        "id": "task-vendor-settlement",
+        "title": "Vendor sign‑off and balance settlement",
+        "description": "Collect final invoices, obtain receipts, and settle payments",
+        "milestone": "day_of",
+        "due_date": "2026-12-20",
+        "depends_on": [
+          "task-vendor-briefing",
+          "task-av-rehearsal"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      }
+    ],
+    "last_updated": "2026-11-01T04:17:25.518648Z"
+  },
+  "vendors": [],
+  "tradeoff_options": [],
+  "applied_tradeoffs": [],
+  "created_at": "2026-11-01T04:15:03.333561Z",
+  "updated_at": "2026-11-01T04:17:25.518648Z"
+}

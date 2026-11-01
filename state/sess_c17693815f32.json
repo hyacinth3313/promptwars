@@ -1,0 +1,272 @@
+{
+  "config": {
+    "session_id": "sess_c17693815f32",
+    "event_type": "wedding",
+    "event_date": "2026-12-13",
+    "location": "Bengaluru",
+    "total_budget": 5000000.0,
+    "guest_count": 250,
+    "priorities": {
+      "catering": 0.25,
+      "venue": 0.26,
+      "decor": 0.25,
+      "photography": 0.23,
+      "logistics": 0.01
+    },
+    "currency": "INR"
+  },
+  "last_committed_scenario_id": null,
+  "budget": {
+    "total_budget": 5000000.0,
+    "items": [
+      {
+        "category": "venue",
+        "allocated": 1300000.0,
+        "estimated": 200000.0,
+        "verified": null,
+        "notes": "Banquet hall reservation with deposit"
+      },
+      {
+        "category": "catering",
+        "allocated": 1250000.0,
+        "estimated": 150000.0,
+        "verified": null,
+        "notes": "South‑Indian veg & non‑veg menu, live counters"
+      },
+      {
+        "category": "decoration",
+        "allocated": 1250000.0,
+        "estimated": 300000.0,
+        "verified": null,
+        "notes": "Mandap, floral (marigold, jasmine), entry and stage décor"
+      },
+      {
+        "category": "photography",
+        "allocated": 1150000.0,
+        "estimated": 150000.0,
+        "verified": null,
+        "notes": "Candid photography, videography and drone coverage"
+      },
+      {
+        "category": "logistics",
+        "allocated": 50000.0,
+        "estimated": 50000.0,
+        "verified": null,
+        "notes": "Baraat transport and local family transfers"
+      }
+    ],
+    "remaining": 4150000.0,
+    "overage": 0.0,
+    "is_over_budget": false
+  },
+  "tasks": {
+    "tasks": [
+      {
+        "id": "task-venue-shortlist",
+        "title": "Shortlist potential banquet venues",
+        "description": "Research 5 suitable banquet halls or resorts in Bengaluru that can accommodate 250 guests.",
+        "milestone": "3_months",
+        "due_date": "2026-09-15",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-catering-vendor-research",
+        "title": "Identify catering vendors",
+        "description": "Collect menus and quotes from top Bangalore caterers for veg and non‑veg options.",
+        "milestone": "3_months",
+        "due_date": "2026-09-20",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-decor-concept-design",
+        "title": "Design wedding décor concept",
+        "description": "Create mood board for mandap, floral arrangements and lighting themes.",
+        "milestone": "3_months",
+        "due_date": "2026-09-25",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-photography-vendor-select",
+        "title": "Select photography vendor",
+        "description": "Review portfolios of photographers offering candid, video and drone services.",
+        "milestone": "3_months",
+        "due_date": "2026-09-30",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-invitation-design",
+        "title": "Design wedding invitations",
+        "description": "Finalize artwork for printed cards and digital WhatsApp invite.",
+        "milestone": "3_months",
+        "due_date": "2026-09-18",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-venue-book",
+        "title": "Book selected banquet venue",
+        "description": "Confirm booking, sign contract and pay deposit for the chosen hall.",
+        "milestone": "1_month",
+        "due_date": "2026-11-10",
+        "depends_on": [
+          "task-venue-shortlist"
+        ],
+        "status": "pending",
+        "estimated_cost": 200000.0
+      },
+      {
+        "id": "task-catering-finalize",
+        "title": "Finalize catering contract",
+        "description": "Select menu, confirm headcount and pay initial deposit to caterer.",
+        "milestone": "1_month",
+        "due_date": "2026-11-12",
+        "depends_on": [
+          "task-catering-vendor-research"
+        ],
+        "status": "pending",
+        "estimated_cost": 150000.0
+      },
+      {
+        "id": "task-decor-book",
+        "title": "Book decoration vendor",
+        "description": "Confirm mandap design, floral supply and lighting, and pay deposit.",
+        "milestone": "1_month",
+        "due_date": "2026-11-15",
+        "depends_on": [
+          "task-decor-concept-design"
+        ],
+        "status": "pending",
+        "estimated_cost": 300000.0
+      },
+      {
+        "id": "task-photography-contract",
+        "title": "Sign photography agreement",
+        "description": "Lock in photographer, videographer and drone operator, pay deposit.",
+        "milestone": "1_month",
+        "due_date": "2026-11-20",
+        "depends_on": [
+          "task-photography-vendor-select"
+        ],
+        "status": "pending",
+        "estimated_cost": 150000.0
+      },
+      {
+        "id": "task-invitation-print-order",
+        "title": "Order printed invitations",
+        "description": "Place order for 150 printed cards and arrange delivery.",
+        "milestone": "1_month",
+        "due_date": "2026-11-05",
+        "depends_on": [
+          "task-invitation-design"
+        ],
+        "status": "pending",
+        "estimated_cost": 20000.0
+      },
+      {
+        "id": "task-mehendi-artist-book",
+        "title": "Book mehendi artist",
+        "description": "Hire experienced mehendi artist for bride and ladies on wedding day.",
+        "milestone": "1_month",
+        "due_date": "2026-11-08",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 30000.0
+      },
+      {
+        "id": "task-sangeet-choreographer-hire",
+        "title": "Hire sangeet choreographer",
+        "description": "Engage choreographer to design performances for sangeet night.",
+        "milestone": "1_month",
+        "due_date": "2026-11-09",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 50000.0
+      },
+      {
+        "id": "task-sangeet-venue-book",
+        "title": "Reserve sangeet venue",
+        "description": "Book a hall with stage and sound system for sangeet evening.",
+        "milestone": "1_month",
+        "due_date": "2026-11-07",
+        "depends_on": [
+          "task-venue-book"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-priest-booking",
+        "title": "Confirm priest for muhurtham",
+        "description": "Secure pandit for wedding rituals and confirm auspicious timing.",
+        "milestone": "1_month",
+        "due_date": "2026-11-06",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 15000.0
+      },
+      {
+        "id": "task-logistics-plan-baraat",
+        "title": "Plan baraat logistics",
+        "description": "Arrange transport for groom's procession and local family shuttles.",
+        "milestone": "1_week",
+        "due_date": "2026-12-05",
+        "depends_on": [
+          "task-venue-book"
+        ],
+        "status": "pending",
+        "estimated_cost": 50000.0
+      },
+      {
+        "id": "task-attire-finalize",
+        "title": "Finalize bridal & groom attire",
+        "description": "Select wedding outfits, fittings and confirm tailoring timelines.",
+        "milestone": "1_week",
+        "due_date": "2026-12-04",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 200000.0
+      },
+      {
+        "id": "task-rehearsal",
+        "title": "Conduct wedding rehearsal",
+        "description": "Run through ceremony sequence with priest, bride, groom and key vendors.",
+        "milestone": "day_of",
+        "due_date": "2026-12-12",
+        "depends_on": [
+          "task-venue-book",
+          "task-priest-booking",
+          "task-photography-contract"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      },
+      {
+        "id": "task-setup-and-execution",
+        "title": "Setup venue and execute event",
+        "description": "Oversee décor setup, sound checks and vendor coordination on the day.",
+        "milestone": "day_of",
+        "due_date": "2026-12-13",
+        "depends_on": [
+          "task-rehearsal"
+        ],
+        "status": "pending",
+        "estimated_cost": null
+      }
+    ],
+    "last_updated": "2026-08-01T12:00:00Z"
+  },
+  "vendors": [],
+  "tradeoff_options": [],
+  "applied_tradeoffs": [],
+  "created_at": "2026-11-01T05:33:07.287054Z",
+  "updated_at": "2026-11-01T05:33:07.287054Z"
+}

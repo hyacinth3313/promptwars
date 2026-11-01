@@ -1,0 +1,164 @@
+{
+  "config": {
+    "session_id": "sess_36ca3197fe59",
+    "event_type": "birthday",
+    "event_date": "2026-12-20",
+    "location": "Bengaluru",
+    "total_budget": 100000.0,
+    "guest_count": 100,
+    "priorities": {
+      "catering": 0.35,
+      "venue": 0.35,
+      "decor": 0.15,
+      "photography": 0.1,
+      "logistics": 0.05
+    },
+    "currency": "INR"
+  },
+  "last_committed_scenario_id": null,
+  "budget": {
+    "total_budget": 100000.0,
+    "items": [
+      {
+        "category": "catering",
+        "allocated": 35000.0,
+        "estimated": 35000.0,
+        "verified": null,
+        "notes": "Initial allocation based on 35.0% priority weight for Bengaluru market rates."
+      },
+      {
+        "category": "venue",
+        "allocated": 35000.0,
+        "estimated": 35000.0,
+        "verified": null,
+        "notes": "Initial allocation based on 35.0% priority weight for Bengaluru market rates."
+      },
+      {
+        "category": "decor",
+        "allocated": 15000.0,
+        "estimated": 15000.0,
+        "verified": null,
+        "notes": "Initial allocation based on 15.0% priority weight for Bengaluru market rates."
+      },
+      {
+        "category": "photography",
+        "allocated": 10000.0,
+        "estimated": 10000.0,
+        "verified": null,
+        "notes": "Initial allocation based on 10.0% priority weight for Bengaluru market rates."
+      },
+      {
+        "category": "logistics",
+        "allocated": 5000.0,
+        "estimated": 5000.0,
+        "verified": null,
+        "notes": "Initial allocation based on 5.0% priority weight for Bengaluru market rates."
+      }
+    ],
+    "remaining": 0.0,
+    "overage": 0.0,
+    "is_over_budget": false
+  },
+  "tasks": {
+    "tasks": [
+      {
+        "id": "task-venue-book",
+        "title": "Book Birthday Venue",
+        "description": "Book a community hall, clubhouse, or hotel banquet room in Bengaluru suitable for 100 guests. Pay advance and collect booking confirmation.",
+        "milestone": "3_months",
+        "due_date": "2026-11-01",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 35000.0
+      },
+      {
+        "id": "task-photo-hire",
+        "title": "Book Candid Photographer",
+        "description": "Hire a candid photographer for the birthday event. Confirm coverage hours, deliverables (edited photos + short video reel), and advance payment.",
+        "milestone": "3_months",
+        "due_date": "2026-11-05",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 10000.0
+      },
+      {
+        "id": "task-invites-send",
+        "title": "Send WhatsApp & Printed Invitations",
+        "description": "Design and dispatch digital WhatsApp invitation to all 100 guests. Order printed invitation cards from a local Bangalore printer if needed.",
+        "milestone": "1_month",
+        "due_date": "2026-11-20",
+        "depends_on": [
+          "task-venue-book"
+        ],
+        "status": "pending",
+        "estimated_cost": 2000.0
+      },
+      {
+        "id": "task-caterer-book",
+        "title": "Finalise Caterer & Menu",
+        "description": "Book a local caterer for 100 guests. Confirm South-Indian snack menu (sandwiches, pakoras, chaat) and a hot meal for adults. Lock per-plate rate.",
+        "milestone": "1_month",
+        "due_date": "2026-11-29",
+        "depends_on": [
+          "task-venue-book"
+        ],
+        "status": "pending",
+        "estimated_cost": 35000.0
+      },
+      {
+        "id": "task-cake-order",
+        "title": "Order Custom Birthday Cake",
+        "description": "Place a custom theme cake order with a local Bangalore bakery (1–3 kg depending on guest count). Confirm design, flavour, and delivery time.",
+        "milestone": "1_month",
+        "due_date": "2026-12-06",
+        "depends_on": [],
+        "status": "pending",
+        "estimated_cost": 5000.0
+      },
+      {
+        "id": "task-return-gifts",
+        "title": "Purchase Return Gifts / Goody Bags",
+        "description": "Buy return gifts for approximately 100 child guests — small goody bags, chocolates, or small toys. Source from local Bangalore wholesale markets.",
+        "milestone": "1_month",
+        "due_date": "2026-12-06",
+        "depends_on": [
+          "task-invites-send"
+        ],
+        "status": "pending",
+        "estimated_cost": 5000.0
+      },
+      {
+        "id": "task-decor-setup",
+        "title": "Arrange Decoration & Sound System",
+        "description": "Confirm balloon decoration, theme backdrop, and basic flower arrangement with the decorator. Book a light background music / sound system (NOT a full DJ rig). Do a venue walk-through to verify setup plan.",
+        "milestone": "1_week",
+        "due_date": "2026-12-15",
+        "depends_on": [
+          "task-venue-book"
+        ],
+        "status": "pending",
+        "estimated_cost": 13000.0
+      },
+      {
+        "id": "task-day-execution",
+        "title": "Day-of Setup, Execution & Vendor Settlement",
+        "description": "Arrive early to verify decoration, catering setup, cake delivery, and sound system. Manage guest welcome, cake-cutting ceremony, and photography. Settle final vendor payments and collect receipts.",
+        "milestone": "day_of",
+        "due_date": "2026-12-20",
+        "depends_on": [
+          "task-decor-setup",
+          "task-caterer-book",
+          "task-cake-order"
+        ],
+        "status": "pending",
+        "estimated_cost": 0.0
+      }
+    ],
+    "last_updated": "2026-11-01T05:30:46.079921Z"
+  },
+  "vendors": [],
+  "tradeoff_options": [],
+  "applied_tradeoffs": [],
+  "created_at": "2026-11-01T05:30:46.079921Z",
+  "updated_at": "2026-11-01T05:30:46.079921Z"
+}

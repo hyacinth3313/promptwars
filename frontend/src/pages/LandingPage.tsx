@@ -1,0 +1,31 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, Sparkles, Wallet, CalendarDays, HeartHandshake, WandSparkles, Heart, CakeSlice, BriefcaseBusiness, Flower2, Check } from 'lucide-react';
+import { Button, Card, Footer, Logo } from '../components/ui';
+import Celebration from '../components/Celebration';
+import CreateEventDialog from '../components/CreateEventDialog';
+const features = [
+  { icon: Wallet, color: 'bg-mint', title: 'Dream big. Spend wisely.', text: 'A thoughtful budget that makes room for what matters most.', tag: 'SMART BUDGETING' },
+  { icon: CalendarDays, color: 'bg-peach', title: 'Everything, in good time.', text: 'From the first idea to the final detail, know what comes next.', tag: 'ADAPTIVE TIMELINES' },
+  { icon: HeartHandshake, color: 'bg-powder', title: 'Find your kind of people.', text: 'Make sense of vendor quotes, inclusions, and the fine print.', tag: 'VENDOR CLARITY' },
+  { icon: WandSparkles, color: 'bg-lavender', title: 'A plan for every “what if”.', text: 'Explore a new idea and see how your budget and plans could change.', tag: 'AI-POWERED INSIGHTS' },
+];
+export default function LandingPage() {
+  const [creating, setCreating] = useState(false);
+  return <>
+    <header className="page-container flex min-h-20 items-center justify-between gap-4 py-4 sm:h-24"><Logo/><nav className="hidden items-center gap-9 text-sm text-muted md:flex" aria-label="Main navigation"><a href="#possibilities" className="hover:text-charcoal">Made for your moments</a><a href="#how-it-works" className="hover:text-charcoal">How it works</a></nav><Button onClick={() => setCreating(true)} className="text-sm">Let’s plan something <ArrowUpRight size={16}/></Button></header>
+    <main>
+      <section className="page-container hero-grid">
+        <div className="hero-copy"><div className="inline-flex items-center gap-2 rounded-full border border-[#e6dced] bg-[#f0e9f5] px-3.5 py-2 text-[11px] font-semibold tracking-wide text-[#877493]"><Sparkles size={13}/> YOUR MOMENTS. A LITTLE MORE MAGICAL.</div>
+          <h1 className="mt-7 font-display text-[clamp(3rem,5.2vw,4.65rem)] font-semibold leading-[1.12] tracking-[-3px]">Less planning.<br/>More <span className="celebrating-word">celebrating<svg viewBox="0 0 420 18" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12Q210 -4 415 10" fill="none" stroke="#d8bce4" strokeWidth="7" strokeLinecap="round"/></svg></span>.</h1>
+          <p className="mt-7 max-w-[410px] text-[16px] leading-[1.85] text-muted">Big dreams, little details, and everything in between. Meet your AI planning companion for events that feel effortlessly <span className="font-medium text-charcoal">you.</span></p>
+          <div className="mt-8 flex flex-wrap items-center gap-5"><Button onClick={() => setCreating(true)} className="px-7 py-4">Start Planning <ArrowRight size={18}/></Button><Link to="/planner/demo" className="group flex items-center gap-2 text-sm font-medium">Take a little peek <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"/></Link></div>
+          <div className="mt-6 flex items-center gap-2 text-xs text-muted"><span className="flex h-4 w-4 items-center justify-center rounded-full bg-mint text-[#6a917a]"><Check size={10}/></span> A fresh plan. A clear head. A happier celebration.</div>
+        </div><Celebration/>
+      </section>
+      <section id="possibilities" className="page-container event-strip"><p className="text-xs text-muted">FOR EVERY REASON<br/><span className="text-charcoal">to bring people together.</span></p><div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5">{[{ icon: Heart, title: 'Weddings', color: 'text-[#b18fa3]' }, { icon: CakeSlice, title: 'Birthdays', color: 'text-[#bc9b7c]' }, { icon: BriefcaseBusiness, title: 'Work gatherings', color: 'text-[#8b9ead]' }, { icon: Flower2, title: 'Just-because moments', color: 'text-[#8caa92]' }].map(({ icon: Icon, title, color }) => <span key={title} className="flex items-center gap-2.5 text-sm font-medium"><Icon size={21} strokeWidth={1.6} className={color}/>{title}</span>)}</div></section>
+      <section className="page-container pb-20 pt-16"><div className="mb-9 flex flex-wrap items-end justify-between gap-4"><div><p className="eyebrow">A LITTLE HELP. A WHOLE LOT OF POSSIBILITY.</p><h2 className="mt-3 font-display text-[32px] font-semibold tracking-[-1px]">All the details. A softer landing.</h2></div><p className="max-w-[280px] text-sm leading-6 text-muted">Your ideas, beautifully organized.<br/>Your energy, saved for the good stuff.</p></div><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{features.map(({ icon: Icon, title, text, tag, color }) => <Card key={title} className="feature-card p-6"><span className={`icon-tile ${color}`}><Icon size={23} strokeWidth={1.6}/></span><p className="mt-6 text-[9px] font-bold tracking-[1.5px] text-muted">{tag}</p><h3 className="mt-2 font-display text-[17px] font-bold tracking-[-.5px]">{title}</h3><p className="mt-3 text-[13px] leading-6 text-muted">{text}</p></Card>)}</div></section>
+      <section id="how-it-works" className="page-container pb-20"><div className="how-panel"><div><p className="eyebrow">FROM “WHAT IF” TO “CAN’T WAIT”</p><h2 className="mt-3 font-display text-3xl font-semibold tracking-[-1px]">A lovely plan starts<br/>with a little conversation.</h2><Button onClick={() => setCreating(true)} className="mt-6 bg-white/80">Let’s get started <ArrowRight size={16}/></Button></div><div className="space-y-6">{[['01', 'Tell us your big idea', 'The occasion, your people, and what matters to you.'], ['02', 'Watch the pieces come together', 'A tailored budget and timeline, all in one calm space.'], ['03', 'Make room for the memories', 'Adjust as you go. Enjoy the part you’re planning for.']].map(([number, title, text]) => <div key={number} className="flex gap-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/75 text-xs text-lilac shadow-button">{number}</span><div><h3 className="text-sm font-semibold">{title}</h3><p className="mt-1 text-xs leading-5 text-muted">{text}</p></div></div>)}</div></div></section>
+    </main><Footer/>{creating && <CreateEventDialog onClose={() => setCreating(false)}/>}
+  </>;
+}
