@@ -24,7 +24,11 @@ class Settings(BaseSettings):
     state_dir: Path = Path("state")
 
     # CORS Settings
-    cors_origins: Union[List[str], str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    cors_origins: Union[List[str], str] = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://promptwars-pi-lime.vercel.app",
+    ]
 
     model_config = SettingsConfigDict(
         env_file=".env",
