@@ -120,10 +120,14 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Enable CORS for local frontend (http://localhost:5173)
+# Enable CORS for local development and the production frontend.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://promptwars-pi-lime.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
