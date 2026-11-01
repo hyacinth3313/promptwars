@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import json
-from backend.models import EventState
-from backend.prompts._context import INDIA_CONTEXT
+from models import EventState
+from prompts._context import INDIA_CONTEXT
 
 PLANNER_SYSTEM_PROMPT = (
     "You are an expert Indian event planner operating in Bangalore, India. "
@@ -63,7 +63,7 @@ def tasks_prompt(state: EventState) -> str:
     }.get(config.event_type, "10 to 14")
 
     # Import the per-event task menu from intake for consistency
-    from backend.prompts.intake import _event_task_menu
+    from prompts.intake import _event_task_menu
     task_menu = _event_task_menu(config.event_type)
 
     return f"""{INDIA_CONTEXT}

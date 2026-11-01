@@ -10,10 +10,10 @@ import uuid
 from fastapi import HTTPException
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
-from backend.config import settings
-from backend.models import EventConfig, EventState, ScenarioPreviewResponse, TaskList, WhatIfResponse
-from backend.state_manager import get_state, recalculate_budget, save_state
-from backend.timeline_utils import recompute_timeline
+from config import settings
+from models import EventConfig, EventState, ScenarioPreviewResponse, TaskList, WhatIfResponse
+from state_manager import get_state, recalculate_budget, save_state
+from timeline_utils import recompute_timeline
 
 
 class ScenarioChanges(BaseModel):

@@ -8,8 +8,8 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from backend.config import settings
-from backend.models import (
+from config import settings
+from models import (
     BudgetBreakdown,
     BudgetItem,
     EventConfig,

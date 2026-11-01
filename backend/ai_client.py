@@ -8,7 +8,7 @@ from typing import Any, Optional, Type, TypeVar
 from groq import AsyncGroq, APIError, AuthenticationError, RateLimitError
 from pydantic import BaseModel, ValidationError
 
-from backend.config import settings
+from config import settings
 
 logger = logging.getLogger("ai_client")
 

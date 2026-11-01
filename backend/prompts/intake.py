@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from backend.models import EventConfig
-from backend.prompts._context import INDIA_CONTEXT
+from models import EventConfig
+from prompts._context import INDIA_CONTEXT
 
 # ---------------------------------------------------------------------------
 # System prompt

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from backend.models import EventState
-from backend.prompts._context import INDIA_CONTEXT
+from models import EventState
+from prompts._context import INDIA_CONTEXT
 
 TRADEOFF_SYSTEM_PROMPT = (
     "You are an expert Indian event cost optimisation advisor specialising in the "

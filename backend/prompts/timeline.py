@@ -3,8 +3,8 @@ from __future__ import annotations
 from datetime import date
 from typing import List, Optional
 
-from backend.models import EventState
-from backend.prompts._context import INDIA_CONTEXT
+from models import EventState
+from prompts._context import INDIA_CONTEXT
 
 TIMELINE_SYSTEM_PROMPT = (
     "You are a meticulous Indian event project manager based in Bangalore. "

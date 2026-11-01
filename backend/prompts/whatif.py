@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from typing import Any, Dict
 
-from backend.models import EventState
-from backend.prompts._context import INDIA_CONTEXT
+from models import EventState
+from prompts._context import INDIA_CONTEXT
 
 WHATIF_SYSTEM_PROMPT = (
     "You are a predictive event scenario modelling engine for the Indian event market. "

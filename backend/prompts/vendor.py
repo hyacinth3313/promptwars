@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import Optional
-from backend.models import EventState
+from models import EventState
 
 VENDOR_SYSTEM_PROMPT = (
     "You are a forensic event contract auditor and procurement specialist in India. "

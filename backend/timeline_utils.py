@@ -5,7 +5,7 @@ from collections import deque
 from datetime import date, datetime, timedelta, timezone
 from typing import Dict, List, Optional, Set, Tuple
 
-from backend.models import (
+from models import (
     GroupedTasksResponse,
     TaskItem,
     TaskList,
