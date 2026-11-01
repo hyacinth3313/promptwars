@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import re
-from typing import Any, Optional, Type, TypeVar
+from typing import Optional, Type, TypeVar
 
 from groq import AsyncGroq, APIError, AuthenticationError, RateLimitError
 from pydantic import BaseModel, ValidationError

@@ -33,7 +33,6 @@ from models import (
     ScenarioPreviewResponse,
     TaskItem,
     TaskList,
-    TaskProgressStats,
     TaskStatusUpdateRequest,
     TaskStatusUpdateResponse,
     TimelineShiftRequest,

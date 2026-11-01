@@ -1,19 +1,13 @@
 from __future__ import annotations
 
-import logging
 from collections import deque
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, timedelta
 from typing import Dict, List, Optional, Set, Tuple
 
 from models import (
-    GroupedTasksResponse,
     TaskItem,
-    TaskList,
     TaskProgressStats,
 )
-
-logger = logging.getLogger("timeline_utils")
-
 
 def build_dependency_graph(tasks: List[TaskItem]) -> Dict[str, List[str]]:
     """
