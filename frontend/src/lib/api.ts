@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AnalyzeVendorRequest, ApplyTradeoffRequest, ChatMessageRequest, ChatResponse, CommitScenarioRequest, CreateSessionResponse, EventConfig, EventState, RecalculateBudgetResponse, ScenarioPreviewResponse, TaskStatus, TaskStatusUpdateResponse, TimelineShiftRequest, TimelineShiftResponse, TradeoffResponse, VendorQuote, WhatIfRequest } from '../types';
-export const api = axios.create({ baseURL: import.meta.env?.VITE_API_URL || 'http://localhost:8000/api', timeout: 90000, headers: { 'Content-Type': 'application/json' } });
+export const api = axios.create({ baseURL: import.meta.env?.VITE_API_URL || 'https://gather-genai.onrender.com/api', timeout: 90000, headers: { 'Content-Type': 'application/json' } });
 const path = (id: string) => `/sessions/${encodeURIComponent(id)}`;
 export const plannerApi = {
   createSession: async () => (await api.post<CreateSessionResponse>('/sessions')).data,

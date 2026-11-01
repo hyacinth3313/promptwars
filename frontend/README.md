@@ -8,7 +8,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. Run the FastAPI backend separately on port 8000 using the root README instructions. `VITE_API_URL` optionally overrides `http://localhost:8000/api`; copy `.env.example` to `.env.local` to configure it. No backend secrets belong in frontend environment variables.
+Open http://localhost:5173. Run the FastAPI backend separately on port 8000 using the root README instructions. `VITE_API_URL` optionally overrides `https://gather-genai.onrender.com/api`; copy `.env.example` to `.env.local` to configure it. No backend secrets belong in frontend environment variables.
 
 `npm run build` checks TypeScript and produces `dist/`. `npm run preview` serves the production build. Production hosting must rewrite client routes to `index.html`.
 
