@@ -11,13 +11,13 @@ from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from backend.ai_client import (
+from ai_client import (
     GroqClientError,
     GroqConfigurationError,
     ai_client,
 )
-from backend.config import settings
-from backend.models import (
+from config import settings
+from models import (
     AnalyzeVendorRequest,
     ApplyTradeoffRequest,
     BudgetBreakdown,
@@ -44,7 +44,7 @@ from backend.models import (
     WhatIfRequest,
     WhatIfResponse,
 )
-from backend.prompts import (
+from prompts import (
     INTAKE_SYSTEM_PROMPT,
     PLANNER_SYSTEM_PROMPT,
     TIMELINE_SYSTEM_PROMPT,
@@ -60,7 +60,7 @@ from backend.prompts import (
     vendor_parse_prompt,
     whatif_prompt,
 )
-from backend.state_manager import (
+from state_manager import (
     apply_tradeoff_to_state,
     build_default_state,
     create_session,
@@ -72,14 +72,14 @@ from backend.state_manager import (
     save_state,
     update_state,
 )
-from backend.timeline_utils import (
+from timeline_utils import (
     calculate_task_stats,
     cascade_task_delay,
     group_tasks_by_milestone,
     recompute_timeline,
     validate_and_enforce_dependency_order,
 )
-from backend.scenarios import commit_preview, save_preview, target_config
+from scenarios import commit_preview, save_preview, target_config
 
 
 # Setup logging
@@ -841,7 +841,7 @@ async def chat_with_planner(session_id: str, request: ChatMessageRequest):
 
 if __name__ == "__main__":
     uvicorn.run(
-        "backend.main:app",
+        "main:app",
         host=settings.host,
         port=settings.port,
         reload=settings.debug,
