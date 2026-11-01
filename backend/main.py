@@ -154,6 +154,7 @@ async def serialize_session_writes(request, call_next):
 
 @app.get("/", tags=["System"])
 def root():
+    """Return the API name, version, and availability details."""
     return {
         "name": "GenAI Event Planner API",
         "version": "1.2.0",
@@ -165,6 +166,7 @@ def root():
 
 @app.get("/health", tags=["System"])
 def health_check():
+    """Report backend health and the current planning service configuration."""
     sessions = list_sessions()
     return {
         "status": "healthy",
@@ -800,6 +802,7 @@ async def simulate_what_if_scenario(session_id: str, request: WhatIfRequest):
 
 @app.post("/api/sessions/{session_id}/commit-scenario", response_model=EventState, tags=["GenAI Planner"])
 def commit_what_if_scenario(session_id: str, request: CommitScenarioRequest):
+    """Save the accepted scenario as the session’s committed event plan."""
     return commit_preview(session_id, request.scenario_id)
 
 
