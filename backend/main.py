@@ -1,3 +1,22 @@
+"""  
+GenAI Celebration & Event Planner — Challenge 5 (Google Promptwars)  
+  
+An adaptive AI-powered event planning backend that solves real execution problems:  
+  
+- Structured Intake & Constraint Engine: collects event type, budget, guest count,  
+  date, location, and priority weights before generating any plan.  
+- Dynamic Budget & Trade-off Engine: links budget variables together and presents  
+  actionable trade-off options when allocations exceed the limit.  
+- Dependency-Aware Task Timeline: generates milestone-bucketed tasks with logical  
+  dependencies and recalculates downstream deadlines when dates shift.  
+- Vendor Quote Analyzer: parses raw vendor quotes, extracts line items, flags  
+  hidden fees, and generates vendor interview questions.  
+- What-If Replanner: accepts delta changes (budget, guests, date) and merges  
+  revised outputs back into the active session without resetting completed tasks.  
+  
+Built with FastAPI + Groq (LLaMA) + Pydantic. Deployed on Render.  
+"""  
+
 from __future__ import annotations
 
 import asyncio
